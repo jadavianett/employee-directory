@@ -1,0 +1,18 @@
+[
+    {
+    "id": 1,
+    "name": "Leslie Knope",
+    "image":
+      "https://vignette.wikia.nocookie.net/spongebobgalaxy/images/0/07/SpongeBob_SquarePants.png/revision/latest?cb=20171228024014",
+    "e-mail": "knope@pandr.com",
+    "phone": "111-111-1111"
+    }, 
+    {
+        "id": 2,
+        "name": "",
+        "image":
+          "https://vignette.wikia.nocookie.net/spongebobgalaxy/images/0/07/SpongeBob_SquarePants.png/revision/latest?cb=20171228024014",
+        "e-mail": "knope@pandr.com",
+        "phone": "111-111-1111" 
+    }
+]
