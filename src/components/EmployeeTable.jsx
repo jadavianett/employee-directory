@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import EmployeeRow from "./EmployeeRow";
 import employees from "../employees.json";
 
+
 class EmployeeTable extends Component {
   state = {
     employees,
