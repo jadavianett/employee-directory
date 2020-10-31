@@ -7,7 +7,7 @@ You can use the application by visiting the deployed web page at https://jadavia
 
 You can view your employees and search by entering a name in the search bar. If you click on "name", you can sort employees alphabetically by first name.
 
-![alt text](public/Employeedir.png "Employee Directory")
+![alt text](./public/Employeedir.png "Employee Directory")
 
 ## Technologies 
 React, Bootstrap, JavaScript
