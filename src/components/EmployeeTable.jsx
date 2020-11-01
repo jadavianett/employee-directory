@@ -15,14 +15,33 @@ class EmployeeTable extends Component {
 
   componentDidMount() {
     let { names } = this.state.names;
-    names = this.state.employees.map((employee) => employee.name);
+    
+    names = this.state.employees.map((employee) => employee.name.first);
+    console.log(names);
     this.setState({ names });
   }
 
-  sortAscending() {
-    const { names } = this.state;
-    names.sort((a, b) => a - b);
+  sortAscending = ()=>  {
+    this.setState({
+      names: this.state.names.sort((a,b)=> {
+        if (a.names< b.names) {
+          return -1;
+        } else if (a.name > b.name) {
+          return 1;
+        } else {
+          return
+        }
+      })
+    })
   }
+  // sortAscending() {
+  //   const { names } = this.state;
+  // let sorted=  names.sort((a, b) => a - b);
+  // console.log("this is prior state", this.state)
+  // this.setState({sorted})
+  // console.log("this is updated state", this.state)
+  // console.log("this is sorted names", sorted)
+  // }
 
   render() {
     return (
