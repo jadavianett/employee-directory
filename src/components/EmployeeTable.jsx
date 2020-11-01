@@ -7,42 +7,21 @@ class EmployeeTable extends Component {
     employees,
     names: [],
   };
-
-  constructor(props) {
-    super(props);
-    this.sortAscending = this.sortAscending.bind(this);
-  }
-
-  componentDidMount() {
-    let { names } = this.state.names;
-    
-    names = this.state.employees.map((employee) => employee.name.first);
-    console.log(names);
-    this.setState({ names });
-  }
-
-  sortAscending = ()=>  {
+  // sorts the list of employees by last name
+  sortByLastName = () => {
+    let employeeArray = employees;
+    employeeArray.sort((a, b) => {
+      if (a.name.last < b.name.last) return -1;
+      if (a.name.last > b.name.last) return 1;
+      return 0;
+    });
+    // sets the employee array to a new sortedemployees element
     this.setState({
-      names: this.state.names.sort((a,b)=> {
-        if (a.names< b.names) {
-          return -1;
-        } else if (a.name > b.name) {
-          return 1;
-        } else {
-          return
-        }
-      })
-    })
-  }
-  // sortAscending() {
-  //   const { names } = this.state;
-  // let sorted=  names.sort((a, b) => a - b);
-  // console.log("this is prior state", this.state)
-  // this.setState({sorted})
-  // console.log("this is updated state", this.state)
-  // console.log("this is sorted names", sorted)
-  // }
+      sortedEmployees: employeeArray,
+    });
+  };
 
+  // renders the table
   render() {
     return (
       <div style={{ margin: "0 auto" }}>
@@ -50,13 +29,14 @@ class EmployeeTable extends Component {
           <thead>
             <tr>
               <th scope="col">Photo</th>
-              <th scope="col" onClick={this.sortAscending}>
+              <th scope="col" onClick={this.sortByLastName}>
                 <span>Name</span>
               </th>
               <th scope="col">Phone Number</th>
               <th scope="col">E-Mail</th>
             </tr>
           </thead>
+          {/* // maps over the employee array to render a row for each employee */}
           {this.state.employees.map((employee) => (
             <EmployeeRow
               name={employee.name}
@@ -71,4 +51,5 @@ class EmployeeTable extends Component {
   }
 }
 
+// exports the component so that can be imported into the app.js
 export default EmployeeTable;

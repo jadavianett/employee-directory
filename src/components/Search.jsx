@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import employees from "../employees.json";
 import axios from "axios";
 
+// state sets search to an empty string
 class Search extends Component {
   state = {
     search: "",
@@ -12,6 +13,7 @@ class Search extends Component {
       this.setState({ results: res.data.results });
     });
   }
+  // is called when when the input field is changed
   handleInputChange = (event) => {
     this.setState({ search: event.target.value });
     let input, filter, table, tr, td, i, txtValue;
@@ -32,11 +34,12 @@ class Search extends Component {
     }
   };
   
+  // is called when the input form is submitted 
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log(this.state.search);
   };
 
+  //renders the search bar 
   render() {
     return (
       <div id="search-bar">
@@ -54,4 +57,5 @@ class Search extends Component {
   }
 }
 
+// exports the component so that it can be imported into app.js
 export default Search;

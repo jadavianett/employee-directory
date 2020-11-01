@@ -1,14 +1,17 @@
 import React from "react";
-import "./Header.css"
+import "./Header.css";
 
+// renders the header
 const Header = () => {
   return (
-   
     <div class="page-header">
-  <h1>Employee Directory</h1>
-  <br/>
-  <h5>Click on name property to sort employees alphabetically or use the search bar to search for a specific employee!</h5>
-</div>
+      <h1>Employee Directory</h1>
+      <br />
+      <h5>
+        Click on name property to sort employees alphabetically or use the
+        search bar to search for a specific employee!
+      </h5>
+    </div>
   );
 };
 
