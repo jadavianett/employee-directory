@@ -4,9 +4,9 @@ const EmployeeRow = (props) => {
     return (
       
         <tbody>
-        <tr>
+        <tr class= "table-row">
           <th scope="row"><img alt={props.name} src={props.picture.thumbnail} /></th>
-          <td>{props.name.first} {props.name.last}</td>
+          <td id = "name">{props.name.first} {props.name.last}</td>
           <td>{props.phone}</td>
           <td style={{width: "100px"}}>{props.email}</td>
         </tr>
